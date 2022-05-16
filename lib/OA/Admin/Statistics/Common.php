@@ -34,26 +34,34 @@ class OA_Admin_Statistics_Common extends OA_Admin_Statistics_Flexy
      * @var string[]
      */
     public $coreParams;
-
-    /**
-     * @var string
-     */
     public $phpAds_TextDirection;
+    public $tabindex;
 
     /**
      * @var string
      */
     public $statsIcon;
-
+    public $welcomeText;
     /**
      * @var string
      */
-    public $strExportStatisticsToExcel;
-
+    public $scriptOpen;
     /**
-     * @var bool
+     * @var string
      */
-    public $showExportToExcel;
+    public $scriptClose;
+    /**
+     * @var int|bool
+     */
+    public $autoShowGraph;
+    public $strExportStatisticsToExcel;
+    public $oStartDate;
+    /**
+     * The name of the page displaying the statistics (eg. "stats.php").
+     *
+     * @var string
+     */
+    public $pageName;
 
     /**
      * The ID "number" of the page (eg. "2.1.2").
@@ -99,6 +107,13 @@ class OA_Admin_Statistics_Common extends OA_Admin_Statistics_Flexy
      * @var array
      */
     public $aPagePrefs;
+
+    /**
+     * An array of the $_GET page parameters.
+     *
+     * @var array
+     */
+    public $aPageParams;
 
     /**
      * An array of page breadcrumbs to display.
@@ -184,6 +199,14 @@ class OA_Admin_Statistics_Common extends OA_Admin_Statistics_Flexy
     public $showDaySpanSelector = false;
 
     /**
+     * A local instance of the Admin_UI_DaySpanField object,
+     * if required.
+     *
+     * @var Admin_UI_DaySpanField
+     */
+    public $oDaySpanSelector;
+
+    /**
      * An array of the start and end date values used when
      * the day span selector element is in use.
      *
@@ -222,6 +245,13 @@ class OA_Admin_Statistics_Common extends OA_Admin_Statistics_Flexy
      * @var OA_Admin_Statistics_Daily
      */
     public $oDaily;
+
+    /**
+     * The current page URI.
+     *
+     * @var string
+     */
+    public $pageURI;
 
     /**
      * A path for static assets (images, CSS, JavaScripts).
@@ -569,8 +599,14 @@ class OA_Admin_Statistics_Common extends OA_Admin_Statistics_Flexy
         // Show the page sections
         phpAds_ShowSections($this->aPageSections, $this->aPageParams, $openNewTable = false);
 
-        // Export to Excel functionality
-        $this->showExportToExcel = !$this->_isEmptyResultArray();
+        // Set the Flexy tags to open/close Javascript
+        $this->scriptOpen = "\n<script type=\"text/javascript\"> <!--\n";
+        $this->scriptClose = "\n//--> </script>\n";
+
+        // Set whether to automatically display the Graph div, will return true if user has just changed the 'graphFields' value
+        $this->autoShowGraph = strpos($_SERVER['QUERY_STRING'], 'graphFields');
+
+        // Set the language vars for statistics display
         $this->strExportStatisticsToExcel = $GLOBALS['strExportStatisticsToExcel'];
 
         // Display page content
@@ -968,16 +1004,12 @@ class OA_Admin_Statistics_Common extends OA_Admin_Statistics_Flexy
         if (empty($link)) {
             return $this->aPageParams;
         }
-
-        parse_str($link, $aParsed);
-
         $aNewParams = [];
         foreach ($this->aPageParams as $key => $value) {
-            if (!empty($value) && !isset($aParsed[$key]) && $key != "entity" && $key != "day") {
+            if (!empty($value) && (!strstr($link, $value) && $key != "entity" && $key != "day")) {
                 $aNewParams[$key] = $value;
             }
         }
-
         return $aNewParams;
     }
 

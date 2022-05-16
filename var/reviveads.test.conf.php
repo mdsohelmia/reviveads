@@ -31,7 +31,7 @@ socket=
 port=3306
 username=root
 password=
-name=reviveads
+name=reviveadsnew
 persistent=
 protocol=tcp
 compress=
@@ -112,7 +112,7 @@ clicktracking=
 ecpmSelectionRate="0.9"
 enableControlOnPureCPM=1
 assetClientCacheExpire=3600
-secret="RfqLs3CbKMvGwO24/oyOib8Nw8kbLJ7I+36sgE6HqDI="
+secret="kHDDgOqSMloo9XIC+f0bXFCyOUZhhjkCeUSg9e9mXUY="
 clickUrlValidity=0
 relAttribute="noopener nofollow"
 
@@ -350,6 +350,7 @@ openXInvocationTags=1
 openXDeliveryLog=1
 openXVideoAds=1
 reviveMaxMindGeoIP2=1
+VideoAds=1
 
 [pluginGroupComponents]
 oxHtml=1
@@ -375,6 +376,12 @@ vastServeVideoPlayer=1
 videoReport=1
 rvMaxMindGeoIP2=1
 rvMaxMindGeoIP2Maintenance=1
+djaxvastInlineBannerTypeHtml=1
+djaxvastOverlayBannerTypeHtml=1
+oxLogdjaxVast=1
+djaxvastServeVideoPlayer=1
+rmvideoReport=1
+rmInvocationTags=1
 
 [audit]
 enabled=1
@@ -385,18 +392,6 @@ passwordMinLength=12
 
 [Client]
 sniff=1
-
-[deliveryHooks]
-postInit="deliveryLimitations:Client:initClientData"
-cacheStore="deliveryCacheStore:oxCacheFile:oxCacheFile|deliveryCacheStore:oxMemcached:oxMemcached"
-cacheRetrieve="deliveryCacheStore:oxCacheFile:oxCacheFile|deliveryCacheStore:oxMemcached:oxMemcached"
-preLog="deliveryDataPrepare:oxDeliveryDataPrepare:dataCommon|deliveryDataPrepare:oxDeliveryDataPrepare:dataPageInfo|deliveryDataPrepare:oxDeliveryDataPrepare:dataUserAgent"
-logClick="deliveryDataPrepare:oxDeliveryDataPrepare:dataCommon|deliveryLog:oxLogClick:logClick"
-logConversion="deliveryLog:oxLogConversion:logConversion"
-logConversionVariable="deliveryLog:oxLogConversion:logConversionVariable"
-logImpression="deliveryDataPrepare:oxDeliveryDataPrepare:dataCommon|deliveryLog:oxLogImpression:logImpression"
-logRequest="deliveryDataPrepare:oxDeliveryDataPrepare:dataCommon|deliveryLog:oxLogRequest:logRequest"
-logImpressionVast="deliveryLog:oxLogVast:logImpressionVast"
 
 [oxCacheFile]
 cachePath=
@@ -425,3 +420,23 @@ isAutoPlayOfVideoInOpenXAdminToolEnabled=0
 [rvMaxMindGeoIP2]
 mmdb_paths=
 license_key=
+
+[djaxvastOverlayBannerTypeHtml]
+isVastOverlayAsImageEnabled=1
+
+[djaxvastServeVideoPlayer]
+isAutoPlayOfVideoInOpenXAdminToolEnabled=0
+
+[deliveryHooks]
+logImpressiondjaxVast="deliveryLog:oxLogdjaxVast:logImpressiondjaxVast"
+logImpressionVast="deliveryLog:oxLogVast:logImpressionVast"
+addMaintenanceStatisticsTask="maintenanceStatisticsTask:rvMaxMindGeoIP2Maintenance:rvMaxMindGeoIP2Maintenance"
+preLog="deliveryDataPrepare:oxDeliveryDataPrepare:dataCommon|deliveryDataPrepare:oxDeliveryDataPrepare:dataPageInfo|deliveryDataPrepare:oxDeliveryDataPrepare:dataUserAgent"
+logClick="deliveryDataPrepare:oxDeliveryDataPrepare:dataCommon|deliveryLog:oxLogClick:logClick"
+logConversion="deliveryLog:oxLogConversion:logConversion"
+logConversionVariable="deliveryLog:oxLogConversion:logConversionVariable"
+logImpression="deliveryDataPrepare:oxDeliveryDataPrepare:dataCommon|deliveryLog:oxLogImpression:logImpression"
+logRequest="deliveryDataPrepare:oxDeliveryDataPrepare:dataCommon|deliveryLog:oxLogRequest:logRequest"
+postInit="deliveryLimitations:Client:initClientData"
+cacheStore="deliveryCacheStore:oxCacheFile:oxCacheFile|deliveryCacheStore:oxMemcached:oxMemcached"
+cacheRetrieve="deliveryCacheStore:oxCacheFile:oxCacheFile|deliveryCacheStore:oxMemcached:oxMemcached"

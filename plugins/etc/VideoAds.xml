@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href=""?>
+
+<plugin>
+    <name>VideoAds</name>
+    <displayName>Vast Video Plugin</displayName>
+    <creationDate>2019-01-08</creationDate>
+    <author>Revive Adserver Mod</author>
+    <authorEmail>info@reviveadservermod.com</authorEmail>
+    <authorUrl>http://reviveadservermod.com</authorUrl>
+    <description>Plugin that provides Vast 2.0,Vast 3.0 Supported</description>
+    <version>1</version>
+    <type>extension</type>
+
+    <install>
+
+        <files>
+            <file path="{PLUGINPATH}">VideoAds.readme.txt</file>
+            <file path="{PLUGINPATH}">VideoAds.uninstall.txt</file>
+        </files>
+
+        <contents>
+            <group name="djaxvastInlineBannerTypeHtml">1</group>
+            <group name="djaxvastOverlayBannerTypeHtml">2</group>  
+            <group name="oxLogdjaxVast">3</group>
+            <group name="djaxvastServeVideoPlayer">4</group>
+            <group name="rmvideoReport">5</group>
+            <group name="rmInvocationTags">6</group>
+
+        </contents>
+
+    </install>
+
+    <readme>
+
+    </readme>
+
+</plugin>

@@ -1,6 +1,7 @@
-Installation started 2022-05-16 14:28:35
-Attempting to connect to database reviveads with user root
-Connected to database reviveads
+Installation started 2022-05-16 15:18:43
+Attempting to connect to database reviveadsnew with user root
+Database created reviveadsnew
+Connected to database reviveadsnew
 Database settings and permissions are OK
 creating upgrade_action audit table
 successfully created upgrade_action audit table
@@ -9,7 +10,7 @@ successfully created database_action audit table
 schema definition from cache TRUE
 Installation created the core tables
 Installation updated the schema version to 627
-Installation updated the application version to 5.4.1
+Installation updated the application version to 5.4.0
 Preparing to set timezone preference...
 Found timezone preference ID of 16
 Found the admin account's timezone association, updating preference...
@@ -22,6 +23,8 @@ Updated the admin account timezone preference to: 'UTC'
 #! openXDeliveryLog(): Could not be installed because previous installation (whole or partial) was found
 #! openXVideoAds(): Could not be installed because previous installation (whole or partial) was found
 #! reviveMaxMindGeoIP2(): Could not be installed because previous installation (whole or partial) was found
+Starting file-check for plugins...
+Finished file-check for plugins
 Starting file-check for plugins...
 Finished file-check for plugins
 Starting file-check for plugins...

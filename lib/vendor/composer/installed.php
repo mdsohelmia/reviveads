@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'v5.4.1',
-        'version' => '5.4.1.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../../',
         'aliases' => array(),
-        'reference' => '42b0cdd0976b2c394eca7c4601169e1aae76a86e',
+        'reference' => '233c19650cc03828f4d82040d2db66410100cfb0',
         'name' => 'revive-adserver/revive-adserver',
         'dev' => false,
     ),
@@ -151,12 +151,12 @@
             'dev_requirement' => false,
         ),
         'revive-adserver/revive-adserver' => array(
-            'pretty_version' => 'v5.4.1',
-            'version' => '5.4.1.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../../',
             'aliases' => array(),
-            'reference' => '42b0cdd0976b2c394eca7c4601169e1aae76a86e',
+            'reference' => '233c19650cc03828f4d82040d2db66410100cfb0',
             'dev_requirement' => false,
         ),
         'sinergi/browser-detector' => array(

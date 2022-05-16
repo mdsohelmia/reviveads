@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href=""?>
+<plugin>
+    <name>rmInvocationTags</name>
+    <displayName>Invocation Tags Plugin</displayName>
+    <creationDate>2019-04-20</creationDate>
+    <author>Revive Adserver</author>
+    <authorEmail>info@reviveadservermod.com</authorEmail>
+    <authorUrl>http://www.reviveadservermod.com</authorUrl>
+    <license>LICENSE.txt</license>
+    <description>Plugin that provides invocation tags for displaying banners on websites.</description>
+    <version>1.4.7</version>
+    <oxversion>3.2.0-beta-rc3</oxversion>
+    <extends>invocationTags</extends>
+    <install>
+        <files>
+          
+            <file path="{MODULEPATH}invocationTags/oxInvocationTags/">vastwrapper3.class.php</file>
+            <file path="{MODULEPATH}invocationTags/oxInvocationTags/">vastwrapper2.class.php</file>
+            <file path="{MODULEPATH}invocationTags/oxInvocationTags/">vastoverlaywrapper3.class.php</file>
+            <file path="{MODULEPATH}invocationTags/oxInvocationTags/">vastoverlaywrapper2.class.php</file>
+            <file path="{MODULEPATH}invocationTags/oxInvocationTags/">vastad4.class.php</file>
+            <file path="{MODULEPATH}invocationTags/oxInvocationTags/">vastad3.class.php</file>
+            <file path="{MODULEPATH}invocationTags/oxInvocationTags/">vast3.class.php</file>
+            <file path="{MODULEPATH}invocationTags/oxInvocationTags/">vast2.class.php</file>
+            <file path="{MODULEPATH}invocationTags/oxInvocationTags/">ovast2.class.php</file>
+            <file path="{MODULEPATH}invocationTags/oxInvocationTags/">ovast3.class.php</file>
+        </files>
+    </install>
+</plugin>

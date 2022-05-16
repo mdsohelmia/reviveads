@@ -29,6 +29,7 @@ class OA_Admin_Statistics_Delivery_CommonCrossHistory extends OA_Admin_Statistic
             'advertiser_id' => $advertiserId,
             'include' => ['publisher_id'],
             'exclude' => ['ad_id', 'zone_id'],
+            'custom_columns' => []
         ];
 
         if (OA_Permission::isAccount(OA_ACCOUNT_ADVERTISER)) {
@@ -71,6 +72,7 @@ class OA_Admin_Statistics_Delivery_CommonCrossHistory extends OA_Admin_Statistic
         $aParams = [
             'advertiser_id' => $advertiserId,
             'include' => ['publisher_id'],
+            'custom_columns' => []
         ];
 
         if (OA_Permission::isAccount(OA_ACCOUNT_ADVERTISER)) {
@@ -114,6 +116,7 @@ class OA_Admin_Statistics_Delivery_CommonCrossHistory extends OA_Admin_Statistic
             'placement_id' => $placementId,
             'include' => ['publisher_id'],
             'exclude' => ['ad_id', 'zone_id'],
+            'custom_columns' => []
         ];
 
         if (OA_Permission::isAccount(OA_ACCOUNT_ADVERTISER)) {
@@ -156,6 +159,7 @@ class OA_Admin_Statistics_Delivery_CommonCrossHistory extends OA_Admin_Statistic
         $aParams = [
             'placement_id' => $placementId,
             'exclude' => ['ad_id'],
+            'custom_columns' => []
         ];
 
         if (OA_Permission::isAccount(OA_ACCOUNT_ADVERTISER)) {
@@ -199,6 +203,7 @@ class OA_Admin_Statistics_Delivery_CommonCrossHistory extends OA_Admin_Statistic
             'ad_id' => $adId,
             'include' => ['publisher_id'],
             'exclude' => ['ad_id', 'zone_id'],
+            'custom_columns' => []
         ];
 
         if (OA_Permission::isAccount(OA_ACCOUNT_ADVERTISER)) {
@@ -241,6 +246,7 @@ class OA_Admin_Statistics_Delivery_CommonCrossHistory extends OA_Admin_Statistic
         $aParams = [
             'ad_id' => $adId,
             'exclude' => ['ad_id'],
+            'custom_columns' => []
         ];
 
         if (OA_Permission::isAccount(OA_ACCOUNT_ADVERTISER)) {
@@ -284,6 +290,7 @@ class OA_Admin_Statistics_Delivery_CommonCrossHistory extends OA_Admin_Statistic
             'publisher_id' => $publisherId,
             'include' => ['placement_id'],
             'exclude' => ['ad_id', 'zone_id'],
+            'custom_columns' => []
         ];
 
         // Get stats campaign list
@@ -316,6 +323,7 @@ class OA_Admin_Statistics_Delivery_CommonCrossHistory extends OA_Admin_Statistic
         $aParams = [
             'publisher_id' => $publisherId,
             'exclude' => ['zone_id'],
+            'custom_columns' => []
         ];
 
         // Get stats banner list
@@ -354,6 +362,7 @@ class OA_Admin_Statistics_Delivery_CommonCrossHistory extends OA_Admin_Statistic
             'zone_id' => $zoneId,
             'include' => ['placement_id'],
             'exclude' => ['ad_id', 'zone_id'],
+            'custom_columns' => []
         ];
 
         // Get stats campaign list
@@ -386,6 +395,7 @@ class OA_Admin_Statistics_Delivery_CommonCrossHistory extends OA_Admin_Statistic
         $aParams = [
             'zone_id' => $zoneId,
             'exclude' => ['zone_id'],
+            'custom_columns' => []
         ];
 
         // Get stats banner list
